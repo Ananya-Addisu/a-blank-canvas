@@ -1,0 +1,179 @@
+.container {
+  padding: var(--space-6);
+  max-width: 800px;
+}
+
+.header {
+  margin-bottom: var(--space-5);
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-neutral-12);
+  margin-bottom: var(--space-2);
+}
+
+.subtitle {
+  font-size: 15px;
+  color: var(--color-neutral-10);
+}
+
+.searchBar {
+  position: relative;
+  margin-bottom: var(--space-4);
+}
+
+.searchIcon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-neutral-9);
+  pointer-events: none;
+}
+
+.searchInput {
+  padding-left: 44px !important;
+  height: 48px;
+  font-size: 15px;
+  border-radius: var(--radius-3);
+}
+
+.categoryFilters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.categoryButton {
+  padding: 6px 14px;
+  border: 1px solid var(--color-neutral-5);
+  border-radius: var(--radius-round);
+  background: transparent;
+  color: var(--color-neutral-10);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.categoryActive {
+  background: var(--color-neutral-12);
+  color: var(--color-neutral-1);
+  border-color: var(--color-neutral-12);
+}
+
+.workflowList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.categoryGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.categoryTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-neutral-11);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding-bottom: var(--space-2);
+  border-bottom: 2px solid var(--color-neutral-4);
+  margin-bottom: var(--space-1);
+}
+
+.workflowCard {
+  border: 1px solid var(--color-neutral-4);
+  border-radius: var(--radius-3);
+  overflow: hidden;
+  background: var(--color-neutral-1);
+}
+
+.workflowHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  color: var(--color-neutral-12);
+  transition: background 0.15s;
+}
+
+.workflowHeader:hover {
+  background: var(--color-neutral-2);
+}
+
+.workflowIcon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent-3);
+  color: var(--color-accent-9);
+  border-radius: var(--radius-2);
+  flex-shrink: 0;
+}
+
+.workflowTitle {
+  flex: 1;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.workflowSteps {
+  padding: 0 var(--space-4) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  border-top: 1px solid var(--color-neutral-3);
+  padding-top: var(--space-4);
+  margin-left: 52px;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.stepNumber {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-neutral-3);
+  border-radius: var(--radius-round);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-neutral-11);
+  flex-shrink: 0;
+}
+
+.stepText {
+  font-size: 14px;
+  color: var(--color-neutral-11);
+  line-height: 1.5;
+  padding-top: 2px;
+}
+
+.emptyState {
+  text-align: center;
+  padding: var(--space-10);
+  color: var(--color-neutral-9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}

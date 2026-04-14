@@ -1,0 +1,235 @@
+.container {
+  min-height: 100vh;
+  background: var(--color-neutral-1);
+  padding-bottom: 80px;
+}
+
+.main {
+  padding: var(--space-6);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: var(--space-7);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 var(--space-2) 0;
+  color: var(--color-neutral-12);
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--color-neutral-10);
+  margin: 0;
+}
+
+.empty {
+  text-align: center;
+  padding: var(--space-9);
+  background: var(--color-neutral-2);
+  border-radius: var(--radius-5);
+  border: 1px solid var(--color-neutral-6);
+}
+
+.emptyIcon {
+  color: var(--color-neutral-8);
+  margin-bottom: var(--space-4);
+}
+
+.emptyTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 var(--space-2) 0;
+  color: var(--color-neutral-12);
+}
+
+.emptyText {
+  color: var(--color-neutral-10);
+  margin: 0;
+}
+
+.enrollmentsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.enrollmentCard {
+  background: var(--color-neutral-2);
+  border: 1px solid var(--color-neutral-6);
+  border-radius: var(--radius-5);
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.enrollmentCard:hover {
+  box-shadow: var(--shadow-2);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-5);
+  border-bottom: 1px solid var(--color-neutral-6);
+  background: var(--color-neutral-3);
+}
+
+.itemInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex: 1;
+  min-width: 0;
+}
+
+.itemIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-3);
+  background: var(--color-accent-3);
+  color: var(--color-accent-9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.itemName {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 var(--space-1) 0;
+  color: var(--color-neutral-12);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.itemType {
+  font-size: 0.875rem;
+  color: var(--color-neutral-10);
+  margin: 0;
+}
+
+.badgeApproved {
+  background: var(--color-success-9);
+  color: white;
+}
+
+.cardBody {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3) 0;
+}
+
+.detailLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.9375rem;
+  color: var(--color-neutral-10);
+}
+
+.detailValue {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-neutral-12);
+}
+
+.adminNotes {
+  background: var(--color-neutral-3);
+  padding: var(--space-4);
+  border-radius: var(--radius-3);
+  border-left: 3px solid var(--color-accent-9);
+  margin-top: var(--space-3);
+}
+
+.notesLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-neutral-11);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.notesText {
+  font-size: 0.875rem;
+  color: var(--color-neutral-12);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.cardFooter {
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-neutral-3);
+  border-top: 1px solid var(--color-neutral-6);
+}
+
+.statusIndicator {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.iconApproved {
+  color: var(--color-success-9);
+  flex-shrink: 0;
+}
+
+.iconRejected {
+  color: var(--color-error-9);
+  flex-shrink: 0;
+}
+
+.iconPending {
+  color: var(--color-neutral-10);
+  flex-shrink: 0;
+}
+
+.statusText {
+  font-size: 0.9375rem;
+  color: var(--color-neutral-11);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: var(--space-4);
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .itemInfo {
+    width: 100%;
+  }
+
+  .detail {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .statusIndicator {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

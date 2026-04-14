@@ -1,0 +1,243 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--color-neutral-2);
+}
+
+.main {
+  flex: 1;
+  padding: var(--space-4);
+  padding-bottom: calc(var(--space-8) + 60px);
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background: transparent;
+  border: none;
+  color: var(--color-accent-11);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: var(--space-4);
+  border-radius: var(--radius-2);
+  transition: background 0.2s;
+}
+
+.backButton:hover {
+  background: var(--color-neutral-4);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  text-align: center;
+  padding: var(--space-4) 0;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: var(--color-accent-3);
+  color: var(--color-accent-11);
+  border-radius: var(--radius-round);
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--color-neutral-12);
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 0.9375rem;
+  color: var(--color-neutral-11);
+  max-width: 400px;
+  margin: 0;
+}
+
+.amountCard {
+  background: var(--color-accent-3);
+  border: 1px solid var(--color-accent-6);
+  border-radius: var(--radius-4);
+  padding: var(--space-5);
+  text-align: center;
+}
+
+.amountLabel {
+  font-size: 0.875rem;
+  color: var(--color-accent-11);
+  font-weight: 500;
+  margin-bottom: var(--space-2);
+}
+
+.amountValue {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-accent-11);
+}
+
+.bankCard {
+  background: var(--color-neutral-1);
+  border: 1px solid var(--color-neutral-6);
+  border-radius: var(--radius-4);
+  padding: var(--space-5);
+}
+
+.bankCardTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-neutral-12);
+  margin: 0 0 var(--space-4) 0;
+}
+
+.detailRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-neutral-5);
+}
+
+.detailRow:last-child {
+  border-bottom: none;
+}
+
+.detailLabel {
+  font-size: 0.875rem;
+  color: var(--color-neutral-11);
+  font-weight: 500;
+}
+
+.detailValue {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.9375rem;
+  color: var(--color-neutral-12);
+  font-weight: 600;
+}
+
+.accountNumber {
+  font-family: var(--font-code);
+  letter-spacing: 0.05em;
+}
+
+.copyButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2);
+  background: var(--color-neutral-3);
+  border: 1px solid var(--color-neutral-6);
+  border-radius: var(--radius-2);
+  color: var(--color-accent-11);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.copyButton:hover {
+  background: var(--color-neutral-4);
+  border-color: var(--color-accent-7);
+}
+
+.instructions {
+  background: var(--color-neutral-3);
+  border-radius: var(--radius-4);
+  padding: var(--space-4);
+}
+
+.instructionsTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-neutral-12);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.instructionsList {
+  margin: 0;
+  padding-left: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.instructionsList li {
+  font-size: 0.9375rem;
+  color: var(--color-neutral-11);
+  line-height: 1.6;
+}
+
+.doneButton {
+  width: 100%;
+  font-size: 1rem;
+  padding: var(--space-4);
+}
+
+.bankSelection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.sectionTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-neutral-12);
+  margin: 0;
+}
+
+.bankButtons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-3);
+}
+
+.bankButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--color-neutral-1);
+  border: 2px solid var(--color-neutral-6);
+  border-radius: var(--radius-3);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-neutral-11);
+}
+
+.bankButton:hover {
+  background: var(--color-neutral-3);
+  border-color: var(--color-neutral-7);
+}
+
+.bankButtonActive {
+  background: var(--color-accent-3);
+  border-color: var(--color-accent-9);
+  color: var(--color-accent-11);
+}
+
+.bankButtonActive:hover {
+  background: var(--color-accent-4);
+}

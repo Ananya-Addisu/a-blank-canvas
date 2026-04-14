@@ -1,0 +1,123 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, hsl(220 15% 12%) 0%, hsl(220 20% 8%) 100%);
+  padding: var(--space-4);
+}
+
+.container {
+  max-width: 360px;
+  width: 100%;
+  text-align: center;
+}
+
+.iconCircle {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--space-5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: hsla(0 0% 100% / 0.08);
+  border: 1px solid hsla(0 0% 100% / 0.12);
+  color: hsla(0 0% 100% / 0.7);
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: hsl(0 0% 100%);
+  margin: 0 0 var(--space-1) 0;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: hsla(0 0% 100% / 0.45);
+  margin: 0 0 var(--space-6) 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.inputGroup {
+  position: relative;
+}
+
+.codeInput {
+  width: 100%;
+  height: 48px;
+  padding: 0 var(--space-4);
+  border: 1px solid hsla(0 0% 100% / 0.12);
+  border-radius: var(--radius-3);
+  background: hsla(0 0% 100% / 0.06);
+  color: hsl(0 0% 100%);
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.codeInput::placeholder {
+  color: hsla(0 0% 100% / 0.25);
+  letter-spacing: normal;
+}
+
+.codeInput:focus {
+  border-color: hsla(0 0% 100% / 0.3);
+  box-shadow: 0 0 0 3px hsla(0 0% 100% / 0.05);
+}
+
+.error {
+  font-size: 0.8125rem;
+  color: hsl(0 70% 65%);
+  margin: 0;
+  text-align: left;
+}
+
+.submitBtn {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: var(--radius-3);
+  background: hsl(0 0% 100%);
+  color: hsl(220 15% 12%);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.submitBtn:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.submitBtn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.submitBtn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.shake {
+  animation: shakeAnim 0.4s ease-in-out;
+}
+
+@keyframes shakeAnim {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(8px); }
+  60% { transform: translateX(-6px); }
+  80% { transform: translateX(6px); }
+}

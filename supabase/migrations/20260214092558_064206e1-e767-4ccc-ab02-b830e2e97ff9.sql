@@ -1,0 +1,2 @@
+ALTER TABLE public.lessons DROP CONSTRAINT lessons_video_source_check;
+ALTER TABLE public.lessons ADD CONSTRAINT lessons_video_source_check CHECK (video_source = ANY (ARRAY['upload'::text, 'youtube'::text, 'gdrive'::text]));

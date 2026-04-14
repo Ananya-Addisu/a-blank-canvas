@@ -1,0 +1,1 @@
+ALTER TABLE public.competition_questions ADD COLUMN IF NOT EXISTS explanation text;

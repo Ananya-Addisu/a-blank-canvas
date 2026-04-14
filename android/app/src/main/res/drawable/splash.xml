@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Pure white background -->
+    <item>
+        <color android:color="#FFFFFF"/>
+    </item>
+    <!-- Magster Academy logo centered -->
+    <item
+        android:width="200dp"
+        android:height="200dp"
+        android:gravity="center">
+        <bitmap
+            android:src="@drawable/splash_logo"
+            android:gravity="fill"/>
+    </item>
+</layer-list>

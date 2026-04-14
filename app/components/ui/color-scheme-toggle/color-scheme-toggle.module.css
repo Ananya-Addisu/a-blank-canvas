@@ -1,0 +1,31 @@
+.triggerButton {
+  width: 100%;
+  justify-content: flex-start;
+  gap: var(--space-3);
+}
+
+.triggerIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.triggerLabel {
+  flex: 1;
+  text-align: left;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.option[data-selected="true"] {
+  background: var(--color-accent-4);
+  color: var(--color-accent-12);
+}
+
+.option[data-selected="false"] {
+  cursor: pointer;
+}

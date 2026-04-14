@@ -1,0 +1,267 @@
+.container {
+  min-height: 100vh;
+  background-color: var(--color-neutral-1);
+  padding-bottom: 140px;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: var(--color-neutral-1);
+  border-bottom: 1px solid var(--color-neutral-4);
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(8px);
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--color-neutral-11);
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.backButton:hover {
+  color: var(--color-accent-9);
+}
+
+.headerTitle {
+  font-size: var(--font-size-3);
+  font-weight: 700;
+  color: var(--color-neutral-12);
+}
+
+.main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-4);
+}
+
+.hero {
+  display: flex;
+  gap: var(--space-5);
+  margin-bottom: var(--space-8);
+  background: var(--color-neutral-2);
+  border-radius: var(--radius-4);
+  padding: var(--space-5);
+  border: 1px solid var(--color-neutral-4);
+}
+
+.heroIconWrapper {
+  width: 120px;
+  min-width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent-3);
+  color: var(--color-accent-9);
+  border-radius: var(--radius-3);
+}
+
+.heroContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.purchasedBadge {
+  align-self: flex-start;
+  margin-bottom: var(--space-2);
+  background: var(--color-success-3);
+  color: var(--color-success-11);
+  border: 1px solid var(--color-success-6);
+}
+
+.title {
+  font-size: var(--font-size-5);
+  font-weight: 800;
+  margin: 0 0 var(--space-1) 0;
+  color: var(--color-neutral-12);
+}
+
+.subtitle {
+  font-size: var(--font-size-2);
+  color: var(--color-neutral-10);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.description {
+  font-size: var(--font-size-2);
+  line-height: 1.5;
+  color: var(--color-neutral-11);
+  margin: 0 0 var(--space-4) 0;
+}
+
+.meta {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-neutral-10);
+  font-size: var(--font-size-2);
+}
+
+.coursesHeader {
+  margin-bottom: var(--space-4);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-4);
+  font-weight: 700;
+  color: var(--color-neutral-12);
+  margin: 0;
+}
+
+.coursesGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.courseCard {
+  background: var(--color-neutral-2);
+  border: 1px solid var(--color-neutral-4);
+  border-radius: var(--radius-3);
+  display: flex;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+}
+
+.courseCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-3);
+  border-color: var(--color-accent-6);
+}
+
+.courseIconBox {
+  width: 100px;
+  min-width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent-2);
+  color: var(--color-accent-9);
+}
+
+.courseContent {
+  flex: 1;
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.courseCategory {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-accent-10);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.courseName {
+  font-size: var(--font-size-3);
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-neutral-12);
+}
+
+.courseDescription {
+  font-size: 13px;
+  color: var(--color-neutral-10);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.courseFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: var(--space-2);
+}
+
+.courseMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--color-neutral-9);
+  font-size: 13px;
+}
+
+.courseButton {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: 13px;
+}
+
+.noAccess {
+  text-align: center;
+  padding: var(--space-8) var(--space-4);
+  background: var(--color-neutral-2);
+  border-radius: var(--radius-4);
+  border: 1px solid var(--color-neutral-4);
+}
+
+.noAccessIcon {
+  color: var(--color-neutral-8);
+  margin-bottom: var(--space-4);
+}
+
+.noAccess h2 {
+  font-size: var(--font-size-4);
+  font-weight: 700;
+  color: var(--color-neutral-12);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.noAccess p {
+  font-size: var(--font-size-2);
+  color: var(--color-neutral-10);
+  margin: 0 0 var(--space-5) 0;
+}
+
+.noAccessActions {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .heroContent {
+    align-items: center;
+  }
+
+  .meta {
+    justify-content: center;
+  }
+
+  .courseIconBox {
+    width: 72px;
+    min-width: 72px;
+  }
+
+  .noAccessActions {
+    flex-direction: column;
+  }
+}

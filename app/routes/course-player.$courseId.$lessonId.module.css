@@ -1,0 +1,479 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--color-neutral-1);
+  color: var(--color-neutral-12);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.playerArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Top Bar ── */
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px var(--space-4);
+  background: linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 100%);
+  color: white;
+  z-index: 100;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.topBarLeft,
+.topBarRight {
+  flex: 0 0 auto;
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #000;
+  background: rgba(255,255,255,0.9);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: background 0.2s, color 0.2s;
+  padding: 6px 10px;
+  border-radius: var(--radius-2);
+}
+
+.backButton:hover {
+  color: #000;
+  background: rgba(255,255,255,1);
+}
+
+.lessonInfo {
+  flex: 1;
+  text-align: center;
+  padding: 0 var(--space-3);
+  overflow: hidden;
+}
+
+.lessonTitle {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.01em;
+}
+
+.menuButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: white;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 6px 14px;
+  border-radius: var(--radius-round);
+  font-weight: 500;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.menuButton:hover {
+  background: rgba(255,255,255,0.18);
+}
+
+/* ── Content Area ── */
+.contentWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* ── Video Container ── */
+.videoContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-4);
+}
+
+.videoActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  padding: 6px 0;
+  flex-wrap: wrap;
+}
+
+.downloadVideoBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-accent-9);
+  color: var(--color-accent-contrast);
+  padding: 6px 14px;
+  border-radius: var(--radius-round);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.downloadVideoBtn:hover {
+  background: var(--color-accent-10);
+}
+
+.saveVideoBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-neutral-3);
+  border: 1px solid var(--color-neutral-5);
+  color: var(--color-neutral-11);
+  padding: 6px 14px;
+  border-radius: var(--radius-round);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.saveVideoBtn:hover:not(:disabled) {
+  background: var(--color-neutral-4);
+  color: var(--color-neutral-12);
+}
+
+.savedBtn {
+  color: var(--color-accent-9);
+  border-color: var(--color-accent-9);
+  background: var(--color-accent-2);
+  cursor: default;
+}
+
+.downloadingBtn {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinIcon {
+  animation: spin 1s linear infinite;
+}
+
+/* ── Lesson Details Below Video ── */
+.lessonDetails {
+  margin-top: var(--space-4);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-neutral-4);
+}
+
+.lessonDetailTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-neutral-12);
+  margin: 0 0 var(--space-2);
+}
+
+.lessonDetailDescription {
+  font-size: 0.9375rem;
+  color: var(--color-neutral-10);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ── Below Video Content ── */
+.belowVideoContent {
+  margin-top: var(--space-4);
+  padding-bottom: var(--space-8);
+}
+
+.belowVideoToggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-3) 0;
+  color: var(--color-neutral-12);
+}
+
+.belowVideoTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-neutral-12);
+  margin: 0;
+}
+
+.belowVideoChapters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+/* ── PDF ── */
+.pdfWrapper {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  background-color: var(--color-neutral-1);
+}
+
+/* ── Document Reader (matches library/downloads reader) ── */
+.docReaderContainer {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-5);
+}
+
+.docReaderHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-neutral-4);
+}
+
+.docReaderInfo {
+  flex: 1;
+}
+
+.docReaderTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-neutral-12);
+  margin: 0 0 var(--space-1) 0;
+}
+
+.docReaderDesc {
+  font-size: 0.875rem;
+  color: var(--color-neutral-9);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.saveOfflineBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 8px 14px;
+  background: var(--color-neutral-3);
+  color: var(--color-neutral-11);
+  border: 1px solid var(--color-neutral-5);
+  border-radius: var(--radius-2);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.saveOfflineBtn:hover {
+  background: var(--color-neutral-4);
+  color: var(--color-neutral-12);
+}
+
+.saveOfflineBtn.savedBtn {
+  background: var(--color-success-3);
+  color: var(--color-success-11);
+  border-color: var(--color-success-6);
+  cursor: default;
+}
+
+.docReaderBody {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* ── Locked State ── */
+.noContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  color: var(--color-neutral-9);
+  text-align: center;
+  padding: var(--space-8);
+  flex: 1;
+}
+
+.noContent h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-neutral-12);
+  margin: 0;
+}
+
+.noContent p {
+  margin: 0;
+  font-size: 0.9375rem;
+  max-width: 320px;
+  line-height: 1.5;
+}
+
+.enrollBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 10px 28px;
+  background: var(--color-accent-9);
+  color: var(--color-accent-contrast);
+  border-radius: var(--radius-round);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.enrollBtn:hover {
+  background: var(--color-accent-10);
+  transform: translateY(-1px);
+}
+
+/* ── Sheet / Sidebar ── */
+.sheetContent {
+  width: 100% !important;
+  max-width: 380px !important;
+  background-color: var(--color-neutral-1) !important;
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--color-neutral-4) !important;
+}
+
+.scrollArea {
+  flex: 1;
+}
+
+.chaptersList {
+  padding: var(--space-3);
+}
+
+.chapter {
+  margin-bottom: var(--space-2);
+  border-radius: var(--radius-3);
+  overflow: hidden;
+  border: 1px solid var(--color-neutral-4);
+  background: var(--color-neutral-2);
+}
+
+.chapterHeader {
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background-color 0.15s;
+  color: var(--color-neutral-11);
+}
+
+.chapterHeader:hover {
+  background-color: var(--color-neutral-3);
+}
+
+.chapterTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-neutral-12);
+}
+
+.lessonsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lessonItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 10px var(--space-4);
+  transition: all 0.15s;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--color-neutral-11);
+  font-size: 0.8125rem;
+  border-top: 1px solid var(--color-neutral-3);
+}
+
+.lessonItem:hover {
+  background-color: var(--color-neutral-3);
+  color: var(--color-neutral-12);
+}
+
+.activeLesson {
+  background-color: var(--color-accent-3);
+  color: var(--color-accent-11);
+  font-weight: 600;
+  border-left: 3px solid var(--color-accent-9);
+}
+
+.lessonIcon {
+  flex-shrink: 0;
+  color: var(--color-neutral-8);
+}
+
+.activeLesson .lessonIcon {
+  color: var(--color-accent-9);
+}
+
+.lessonTitleText {
+  font-size: 0.8125rem;
+  flex: 1;
+  line-height: 1.4;
+}
+
+.completedIcon {
+  color: var(--color-success-9);
+}
+
+.lockedIcon {
+  color: var(--color-neutral-6);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .topBar {
+    padding: 8px var(--space-3);
+  }
+
+  .lessonTitle {
+    font-size: 0.8125rem;
+  }
+
+  .menuButton span {
+    display: none;
+  }
+
+  .backButton span {
+    display: none;
+  }
+
+  .videoContainer {
+    padding: var(--space-2);
+  }
+}

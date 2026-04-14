@@ -1,0 +1,62 @@
+.banner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  position: fixed;
+  top: calc(env(safe-area-inset-top, 0px) + var(--space-2));
+  left: var(--space-4);
+  right: var(--space-4);
+  z-index: 9999;
+  padding: var(--space-3) var(--space-4);
+  background: hsl(45 93% 94%);
+  border: 1px solid hsl(45 80% 70%);
+  border-radius: var(--radius-3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: slideIn 0.35s ease;
+}
+
+:global(.dark-theme) .banner {
+  background: hsl(45 40% 16%);
+  border-color: hsl(45 50% 30%);
+}
+
+.icon {
+  color: hsl(38 92% 50%);
+  flex-shrink: 0;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: hsl(32 80% 30%);
+}
+
+:global(.dark-theme) .title {
+  color: hsl(45 80% 75%);
+}
+
+.subtitle {
+  font-size: 0.75rem;
+  color: hsl(32 50% 45%);
+}
+
+:global(.dark-theme) .subtitle {
+  color: hsl(45 40% 60%);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

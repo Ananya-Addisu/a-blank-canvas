@@ -1,0 +1,130 @@
+.header {
+  background: var(--color-neutral-1);
+  border-bottom: 1px solid var(--color-neutral-6);
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: var(--shadow-1);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-neutral-11);
+  padding: var(--space-2);
+  border-radius: var(--radius-2);
+  transition: all 0.2s var(--ease);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuButton:hover {
+  background: var(--color-neutral-4);
+  color: var(--color-accent-9);
+}
+
+.menuIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font: var(--font-heading);
+  color: var(--color-accent-9);
+  font-size: var(--font-size-3);
+}
+
+.logoIcon {
+  width: 32px;
+  height: 32px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  transition: all 0.3s var(--ease-out);
+}
+
+.searchInput {
+  width: 0;
+  opacity: 0;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-neutral-6);
+  border-radius: var(--radius-3);
+  background: var(--color-neutral-2);
+  color: var(--color-neutral-12);
+  font-size: 0.875rem;
+  transition: all 0.3s var(--ease-out);
+  outline: none;
+}
+
+.searchContainer.searchOpen .searchInput {
+  width: 200px;
+  opacity: 1;
+}
+
+.searchInput:focus {
+  border-color: var(--color-accent-8);
+  background: var(--color-neutral-1);
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-neutral-11);
+  padding: var(--space-2);
+  border-radius: var(--radius-2);
+  transition: all 0.2s var(--ease);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.iconButton:hover {
+  background: var(--color-neutral-4);
+  color: var(--color-accent-9);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.notificationBadge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  font-size: 10px;
+  padding: 2px 5px;
+  min-width: 16px;
+}
+
+@media (max-width: 640px) {
+  .searchContainer.searchOpen .searchInput {
+    width: 150px;
+  }
+}

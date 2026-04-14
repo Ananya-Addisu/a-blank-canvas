@@ -1,0 +1,220 @@
+.container {
+  padding: var(--space-6);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-6);
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-neutral-12);
+  margin: 0;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-5);
+  margin-bottom: var(--space-6);
+}
+
+.statCard {
+  border: 1px solid var(--color-neutral-6);
+}
+
+.statContent {
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-5);
+}
+
+.statIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.statIcon.green {
+  background: var(--color-success-3);
+  color: var(--color-success-9);
+}
+
+.statIcon.blue {
+  background: var(--color-accent-3);
+  color: var(--color-accent-9);
+}
+
+.statIcon.yellow {
+  background: #fef3c7;
+  color: #f59e0b;
+}
+
+.statInfo {
+  flex: 1;
+}
+
+.statLabel {
+  font-size: 14px;
+  color: var(--color-neutral-11);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.statValue {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.statValue h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-neutral-12);
+  margin: 0;
+}
+
+.etbIcon {
+  color: var(--color-neutral-11);
+}
+
+.transactionsCard {
+  border: 1px solid var(--color-neutral-6);
+}
+
+.nameCell {
+  font-weight: 600;
+}
+
+.amount {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 600;
+}
+
+/* Mobile Card View - Hidden on desktop */
+.mobileCards {
+  display: none;
+}
+
+.transactionCard {
+  background: var(--color-neutral-1);
+  border: 1px solid var(--color-neutral-6);
+}
+
+.cardContent {
+  padding: var(--space-4);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-neutral-12);
+  margin: 0;
+}
+
+.cardDetails {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  background: var(--color-neutral-2);
+  border-radius: var(--radius-2);
+}
+
+.detailRow {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-size: 14px;
+  align-items: center;
+}
+
+.detailLabel {
+  color: var(--color-neutral-11);
+  font-weight: 500;
+}
+
+.detailValue {
+  color: var(--color-neutral-12);
+  font-weight: 600;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .container {
+    padding: var(--space-5);
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .container {
+    padding: var(--space-4);
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-3);
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hide table on mobile */
+  .transactionsCard {
+    display: none;
+  }
+
+  /* Show cards on mobile */
+  .mobileCards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: var(--space-3);
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .statContent {
+    padding: var(--space-4);
+  }
+
+  .statValue h3 {
+    font-size: 24px;
+  }
+}

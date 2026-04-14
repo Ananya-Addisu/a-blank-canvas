@@ -1,0 +1,120 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  background: var(--color-neutral-1);
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  padding: var(--space-6);
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-neutral-12);
+  margin-bottom: var(--space-2);
+}
+
+.subtitle {
+  color: var(--color-neutral-11);
+  margin-bottom: var(--space-6);
+}
+
+.tabs {
+  margin-top: var(--space-6);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.card {
+  background: white;
+  border-radius: var(--radius-3);
+  padding: var(--space-4);
+  border: 1px solid var(--color-neutral-5);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.cardHeader h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-neutral-12);
+  flex: 1;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  color: var(--color-neutral-10);
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-neutral-4);
+}
+
+.approved {
+  background: var(--color-success-3);
+  color: var(--color-success-11);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.rejected {
+  background: var(--color-error-3);
+  color: var(--color-error-11);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.pending {
+  background: var(--color-accent-3);
+  color: var(--color-accent-11);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.rejection {
+  background: var(--color-error-2);
+  padding: var(--space-3);
+  border-radius: var(--radius-2);
+  font-size: 0.875rem;
+  color: var(--color-error-11);
+  margin-top: var(--space-2);
+}
+
+.rejection strong {
+  display: block;
+  margin-bottom: var(--space-1);
+}
+
+.empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--space-9);
+  color: var(--color-neutral-9);
+}

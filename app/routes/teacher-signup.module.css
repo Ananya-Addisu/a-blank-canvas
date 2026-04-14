@@ -1,0 +1,433 @@
+/*these are the fix codes from this file*/
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  background: linear-gradient(135deg, var(--color-accent-3) 0%, var(--color-accent-2) 100%);
+}
+
+.content {
+  width: 100%;
+  max-width: 500px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+  color: var(--color-accent-12);
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: var(--color-neutral-1);
+  border-radius: var(--radius-2);
+  cursor: pointer;
+  color: var(--color-accent-11);
+  transition: all 0.2s ease;
+}
+
+.backButton:hover {
+  background: var(--color-neutral-2);
+  transform: translateX(-2px);
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-accent-12);
+  margin: 0;
+}
+
+.card {
+  background: var(--color-neutral-1);
+  border-radius: var(--radius-4);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-3);
+}
+
+.progressSteps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-8);
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.stepCircle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-neutral-4);
+  color: var(--color-neutral-11);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+.step.active .stepCircle {
+  background: var(--color-accent-9);
+  color: var(--color-accent-contrast);
+}
+
+.stepLine {
+  width: 80px;
+  height: 2px;
+  background: var(--color-neutral-6);
+  margin: 0 var(--space-2);
+}
+
+.stepTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-neutral-12);
+  margin-bottom: var(--space-6);
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  position: relative;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-neutral-11);
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  padding: var(--space-3);
+  border: 1px solid var(--color-neutral-6);
+  border-radius: var(--radius-2);
+  font-size: 0.9375rem;
+  background: var(--color-neutral-1);
+  color: var(--color-neutral-12);
+  transition: all 0.2s ease;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--color-accent-8);
+  box-shadow: 0 0 0 3px var(--color-accent-4);
+}
+
+.phoneInputWrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  border: 1px solid var(--color-neutral-6);
+  border-radius: var(--radius-2);
+  background: var(--color-neutral-1);
+  transition: all 0.2s ease;
+}
+
+.phoneInputWrapper:focus-within {
+  border-color: var(--color-accent-8);
+  box-shadow: 0 0 0 3px var(--color-accent-4);
+}
+
+.countryCode {
+  padding: var(--space-3);
+  font-weight: 600;
+  color: var(--color-neutral-11);
+  border-right: 1px solid var(--color-neutral-6);
+}
+
+.phoneInput {
+  flex: 1;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.pinInputWrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  border: 1px solid var(--color-neutral-6);
+  border-radius: var(--radius-2);
+  background: var(--color-neutral-1);
+  transition: all 0.2s ease;
+}
+
+.pinInputWrapper:focus-within {
+  border-color: var(--color-accent-8);
+  box-shadow: 0 0 0 3px var(--color-accent-4);
+}
+
+.pinInput {
+  flex: 1;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.togglePin {
+  padding: var(--space-3);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--color-neutral-11);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.togglePin:hover {
+  color: var(--color-accent-11);
+}
+
+.counter {
+  font-size: 0.75rem;
+  color: var(--color-neutral-11);
+  text-align: right;
+}
+
+.select {
+  cursor: pointer;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+}
+
+.uploadArea {
+  position: relative;
+  width: 100%;
+}
+
+.fileInput {
+  position: absolute;
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.uploadLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-8);
+  border: 2px dashed var(--color-neutral-6);
+  border-radius: var(--radius-3);
+  background: var(--color-neutral-2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--color-neutral-11);
+}
+
+.uploadLabel:hover {
+  border-color: var(--color-accent-8);
+  background: var(--color-accent-2);
+}
+
+.uploadText {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-neutral-12);
+}
+
+.uploadSubtext {
+  font-size: 0.8125rem;
+  color: var(--color-neutral-11);
+}
+
+.termsSection {
+  margin-top: var(--space-2);
+}
+
+.termsLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-size: 0.875rem;
+  color: var(--color-neutral-11);
+  cursor: pointer;
+}
+
+.checkbox {
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.link {
+  color: var(--color-accent-11);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.infoBox {
+  background: var(--color-accent-2);
+  border: 1px solid var(--color-accent-6);
+  border-radius: var(--radius-2);
+  padding: var(--space-4);
+  font-size: 0.875rem;
+  color: var(--color-neutral-11);
+}
+
+.infoBox strong {
+  color: var(--color-neutral-12);
+}
+
+.buttonGroup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.previousButton {
+  width: 100%;
+}
+
+.nextButton {
+  width: 100%;
+  background: var(--color-accent-9);
+  color: var(--color-accent-contrast);
+}
+
+.nextButton:hover {
+  background: var(--color-accent-10);
+}
+
+.footer {
+  margin-top: var(--space-6);
+  text-align: center;
+}
+
+.footerText {
+  font-size: 0.875rem;
+  color: var(--color-neutral-11);
+  margin: 0;
+}
+
+.loginLink {
+  color: var(--color-accent-11);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.loginLink:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: var(--space-3);
+  }
+
+  .card {
+    padding: var(--space-6);
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .stepLine {
+    width: 40px;
+  }
+
+  .buttonGroup {
+    grid-template-columns: 1fr;
+  }
+}
+
+.error {
+  background: var(--color-error-3);
+  color: var(--color-error-11);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-3);
+  margin-bottom: var(--space-4);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  border: 1px solid var(--color-error-6);
+}
+
+.successMessage {
+  text-align: center;
+  padding: var(--space-8);
+}
+
+.successTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-success-11);
+  margin-bottom: var(--space-4);
+}
+
+.successText {
+  font-size: 1rem;
+  color: var(--color-neutral-11);
+  margin-bottom: var(--space-6);
+  line-height: 1.6;
+}
+
+.loginButton {
+  display: inline-block;
+  padding: var(--space-4) var(--space-6);
+  background: var(--color-accent-9);
+  color: white;
+  border-radius: var(--radius-3);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.2s ease;
+}
+
+.loginButton:hover {
+  background: var(--color-accent-10);
+}
+
+.fieldError {
+  color: var(--color-error-9);
+  font-size: 0.8125rem;
+  margin-top: 4px;
+  display: block;
+}
+
+.fieldSuccess {
+  color: var(--color-success-9);
+  font-size: 0.8125rem;
+  margin-top: 4px;
+  display: block;
+}

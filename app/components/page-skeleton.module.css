@@ -1,0 +1,468 @@
+.skeletonContainer {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* ==================
+   Shared primitives
+   ================== */
+.skeletonHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+}
+
+.skeletonCircle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-neutral-3);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.skeletonLine {
+  height: 14px;
+  border-radius: var(--radius-1);
+  background: var(--color-neutral-3);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.skeletonLineShort { width: 40%; }
+.skeletonLineMedium { width: 65%; }
+.skeletonLineLong { width: 90%; }
+.skeletonLineFull { width: 100%; }
+
+.skeletonTitle {
+  height: 22px;
+  width: 50%;
+  border-radius: var(--radius-1);
+  background: var(--color-neutral-3);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.skeletonStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.skeletonStatCard {
+  height: 90px;
+  border-radius: var(--radius-3);
+  background: var(--color-neutral-3);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.skeletonCards {
+  display: flex;
+  gap: var(--space-3);
+  overflow: hidden;
+}
+
+.skeletonCard {
+  flex: 0 0 calc((100% - 2 * var(--space-3)) / 2.5);
+  height: 160px;
+  border-radius: var(--radius-3);
+  background: var(--color-neutral-3);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.skeletonList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.skeletonListItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border-radius: var(--radius-3);
+  background: var(--color-neutral-2);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.skeletonListItemIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-2);
+  background: var(--color-neutral-3);
+  flex-shrink: 0;
+}
+
+.skeletonListItemLines {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.skeletonTable {
+  width: 100%;
+  border-radius: var(--radius-3);
+  overflow: hidden;
+}
+
+.skeletonTableRow {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border-bottom: 1px solid var(--color-neutral-3);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.skeletonTableCell {
+  height: 14px;
+  flex: 1;
+  border-radius: var(--radius-1);
+  background: var(--color-neutral-3);
+}
+
+/* ==========================================
+   Student Home skeleton
+   ========================================== */
+.studentHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+}
+
+.studentHeaderIcon {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-2);
+  background: var(--color-neutral-3);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.studentHeaderLogo {
+  width: 80px;
+  height: 22px;
+  border-radius: var(--radius-1);
+  background: var(--color-neutral-3);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.sectionLabelRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-1);
+}
+
+.sectionLabel {
+  width: 35%;
+  height: 18px;
+  border-radius: var(--radius-1);
+  background: var(--color-neutral-3);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.sectionSeeAll {
+  width: 50px;
+  height: 14px;
+  border-radius: var(--radius-1);
+  background: var(--color-neutral-3);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* Featured path cards skeleton */
+.featuredScrollRow {
+  display: flex;
+  gap: var(--space-3);
+  overflow: hidden;
+  padding-bottom: var(--space-2);
+}
+
+.featuredSkelCard {
+  flex: 0 0 calc((100% - 3 * var(--space-3)) / 3.5);
+  min-width: 0;
+  border-radius: 18px;
+  border: 1px solid var(--color-neutral-4);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.featuredSkelImage {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, var(--color-neutral-3) 0%, var(--color-neutral-4) 100%);
+}
+
+.featuredSkelBody {
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.featuredSkelTitle {
+  width: 80%;
+  height: 14px;
+  border-radius: var(--radius-1);
+  background: var(--color-neutral-3);
+}
+
+.featuredSkelPrice {
+  width: 50%;
+  height: 14px;
+  border-radius: var(--radius-1);
+  background: var(--color-neutral-3);
+}
+
+.featuredSkelButton {
+  width: 70px;
+  height: 28px;
+  border-radius: 18px;
+  border: 1.5px solid var(--color-neutral-4);
+  background: transparent;
+}
+
+/* Course cards skeleton */
+.courseScrollRow {
+  display: flex;
+  gap: var(--space-3);
+  overflow: hidden;
+  padding-bottom: var(--space-2);
+}
+
+.courseSkelCard {
+  flex: 0 0 calc((100% - 3 * var(--space-3)) / 3.5);
+  min-width: 0;
+  border-radius: 16px;
+  border: 1px solid var(--color-neutral-4);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.courseSkelImage {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(135deg, var(--color-neutral-3) 0%, var(--color-neutral-4) 100%);
+}
+
+.courseSkelBody {
+  padding: 8px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.courseSkelTitle {
+  width: 85%;
+  height: 12px;
+  border-radius: var(--radius-1);
+  background: var(--color-neutral-3);
+}
+
+.courseSkelPrice {
+  width: 50%;
+  height: 12px;
+  border-radius: var(--radius-1);
+  background: var(--color-neutral-3);
+}
+
+/* Bundle cards skeleton */
+.bundleScrollRow {
+  display: flex;
+  gap: var(--space-3);
+  overflow: hidden;
+  padding-bottom: var(--space-2);
+}
+
+.bundleSkelCard {
+  flex: 0 0 calc((100% - 3 * var(--space-3)) / 3.5);
+  min-width: 0;
+  border-radius: 16px;
+  border: 1px solid var(--color-neutral-4);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 110px;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.bundleSkelTitle {
+  width: 75%;
+  height: 13px;
+  border-radius: var(--radius-1);
+  background: var(--color-neutral-3);
+}
+
+.bundleSkelFooter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bundleSkelButton {
+  width: 60px;
+  height: 26px;
+  border-radius: 14px;
+  border: 1.5px solid var(--color-neutral-4);
+  background: transparent;
+}
+
+.bundleSkelCount {
+  width: 55px;
+  height: 11px;
+  border-radius: var(--radius-1);
+  background: var(--color-neutral-3);
+}
+
+/* Bottom nav skeleton */
+.bottomNavSkel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0 20px;
+  background: var(--color-neutral-1);
+  border-top: 1px solid var(--color-neutral-4);
+}
+
+.bottomNavItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.bottomNavIcon {
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-1);
+  background: var(--color-neutral-3);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.bottomNavLabel {
+  width: 32px;
+  height: 10px;
+  border-radius: var(--radius-1);
+  background: var(--color-neutral-3);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* ==========================================
+   Teacher Dashboard skeleton
+   ========================================== */
+.teacherHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+}
+
+.teacherWelcome {
+  padding: var(--space-2) 0;
+}
+
+.teacherStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.teacherStatCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: var(--space-4) var(--space-3);
+  border-radius: var(--radius-3);
+  background: var(--color-neutral-2);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.teacherStatIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-2);
+  background: var(--color-neutral-3);
+}
+
+.teacherStatValue {
+  width: 50px;
+  height: 20px;
+  border-radius: var(--radius-1);
+  background: var(--color-neutral-3);
+}
+
+.teacherStatLabel {
+  width: 70px;
+  height: 12px;
+  border-radius: var(--radius-1);
+  background: var(--color-neutral-3);
+}
+
+.teacherCourseList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.teacherCourseItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border-radius: var(--radius-3);
+  background: var(--color-neutral-2);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.teacherCourseIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-2);
+  background: var(--color-neutral-3);
+  flex-shrink: 0;
+}
+
+.teacherCourseInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.teacherManageBtn {
+  width: 60px;
+  height: 30px;
+  border-radius: var(--radius-2);
+  background: var(--color-neutral-3);
+  flex-shrink: 0;
+}
+
+/* ==================
+   Animation
+   ================== */
+@keyframes shimmer {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+/* Wave effect delays */
+.skeletonCards .skeletonCard:nth-child(2),
+.skeletonList .skeletonListItem:nth-child(2),
+.skeletonStats .skeletonStatCard:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.skeletonCards .skeletonCard:nth-child(3),
+.skeletonList .skeletonListItem:nth-child(3),
+.skeletonStats .skeletonStatCard:nth-child(3) {
+  animation-delay: 0.3s;
+}

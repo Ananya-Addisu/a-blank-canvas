@@ -1,0 +1,445 @@
+.container {
+  padding: var(--space-6);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: var(--space-6);
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--color-neutral-12);
+  margin-bottom: var(--space-5);
+}
+
+.createButton {
+  width: 100%;
+  background: var(--color-accent-9);
+  color: white;
+  border-radius: var(--radius-2);
+  padding: var(--space-3) var(--space-4);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+  border: none;
+}
+
+.createButton:hover {
+  background: var(--color-accent-10);
+}
+
+/* Dialog Styling */
+.dialogContent {
+  max-width: 550px;
+  padding: 0;
+  background: var(--color-neutral-1);
+  border-radius: var(--radius-5);
+  overflow: hidden;
+  border: none;
+  box-shadow: var(--shadow-4);
+}
+
+.modalHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-6) var(--space-6) var(--space-4);
+  background: white;
+  border-bottom: 1px solid var(--color-neutral-4);
+  gap: var(--space-3);
+}
+
+.modalIcon {
+  width: 56px;
+  height: 56px;
+  background: var(--color-accent-3);
+  color: var(--color-accent-9);
+  border-radius: var(--radius-round);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-1);
+}
+
+.dialogTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-neutral-12);
+  margin: 0;
+}
+
+.modalDescription {
+  font-size: 0.95rem;
+  color: var(--color-neutral-10);
+  margin-top: var(--space-1);
+  max-width: 400px;
+}
+
+.modalBody {
+  padding: var(--space-6);
+  max-height: 60vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.modalFooter {
+  padding: var(--space-4) var(--space-6);
+  background: var(--color-neutral-2);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  border-top: 1px solid var(--color-neutral-4);
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.formLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-neutral-11);
+}
+
+.formInput,
+.formTextarea {
+  background: white;
+  border: 1px solid var(--color-neutral-6);
+  border-radius: var(--radius-3);
+  padding: var(--space-3);
+  font-size: 0.9375rem;
+  color: var(--color-neutral-12);
+  transition: all 0.2s ease;
+}
+
+.formInput:focus,
+.formTextarea:focus {
+  outline: none;
+  border-color: var(--color-accent-9);
+  box-shadow: 0 0 0 2px var(--color-accent-3);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.cancelButton {
+  min-width: 100px;
+  height: 44px;
+  border-radius: var(--radius-3);
+  font-weight: 600;
+}
+
+.addButton {
+  min-width: 140px;
+  height: 44px;
+  background: var(--color-neutral-12);
+  color: white;
+  border-radius: var(--radius-3);
+  font-weight: 600;
+  border: none;
+}
+
+.addButton:hover {
+  background: var(--color-neutral-11);
+  transform: translateY(-1px);
+}
+
+/* Registrations Dialog */
+.registrationsDialog {
+  max-width: 500px;
+  padding: 0;
+  border-radius: var(--radius-5);
+  overflow: hidden;
+  border: none;
+  box-shadow: var(--shadow-4);
+}
+
+.registrationsList {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+/* Feature Card */
+.featureCard {
+  background: white;
+  border: 1px solid var(--color-neutral-5);
+  border-radius: var(--radius-3);
+  margin-bottom: var(--space-4);
+}
+
+.featureContent {
+  padding: var(--space-5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.featureInfo {
+  flex: 1;
+}
+
+.featureTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-neutral-12);
+  margin-bottom: var(--space-1);
+}
+
+.featureDesc {
+  font-size: 0.875rem;
+  color: var(--color-accent-9);
+}
+
+/* Status Indicator */
+.statusIndicator {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.statusDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #10b981;
+}
+
+.statusText {
+  font-size: 0.875rem;
+  color: #10b981;
+}
+
+/* Competitions List */
+.competitionsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.competitionCard {
+  background: white;
+  border: 1px solid var(--color-neutral-5);
+  border-radius: var(--radius-3);
+  transition: box-shadow 0.2s;
+}
+
+.competitionCard:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.cardContent {
+  padding: var(--space-5);
+}
+
+.cardHeader {
+  margin-bottom: var(--space-3);
+}
+
+.upcomingBadge {
+  background: #dbeafe;
+  color: var(--color-accent-9);
+  font-size: 0.75rem;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-2);
+  font-weight: 500;
+  border: none;
+}
+
+.completedBadge {
+  background: #d1fae5;
+  color: #059669;
+  font-size: 0.75rem;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-2);
+  font-weight: 500;
+  border: none;
+}
+
+.cardTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-neutral-12);
+  margin: 0 0 var(--space-2);
+}
+
+.cardDescription {
+  font-size: 0.875rem;
+  color: var(--color-neutral-10);
+  margin: 0 0 var(--space-4);
+  line-height: 1.5;
+}
+
+.cardMeta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.875rem;
+  color: var(--color-neutral-10);
+}
+
+.metaItem svg {
+  color: var(--color-neutral-9);
+}
+
+.cardActions {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.actionLink {
+  text-decoration: none;
+}
+
+.actionBtn,
+.deleteBtn {
+  font-size: 0.875rem;
+  color: var(--color-neutral-11);
+  background: transparent;
+  border: none;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-2);
+}
+
+.actionBtn:hover {
+  background: var(--color-neutral-3);
+  color: var(--color-neutral-12);
+}
+
+.deleteBtn {
+  color: #dc2626;
+}
+
+.deleteBtn:hover {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* Registrations Dialog */
+.registrationsList {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+.registrationItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3);
+  background: var(--color-neutral-2);
+  border-radius: var(--radius-2);
+}
+
+.studentName {
+  font-weight: 600;
+  margin: 0 0 var(--space-1);
+}
+
+.studentPhone {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--color-neutral-11);
+}
+
+.emptyText {
+  text-align: center;
+  color: var(--color-neutral-11);
+  padding: var(--space-6);
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.875rem;
+  color: var(--color-neutral-11);
+  cursor: pointer;
+}
+
+.checkboxLabel input { accent-color: var(--color-accent-9); }
+
+.publishedBadge {
+  background: #dbeafe;
+  color: var(--color-accent-9);
+  font-size: 0.75rem;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-2);
+  font-weight: 500;
+  border: none;
+}
+
+.gatedCourse {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.8rem;
+  color: var(--color-accent-9);
+  margin-bottom: var(--space-3);
+}
+
+.cardBadges {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.registrationAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-round);
+  background: var(--color-accent-3);
+  color: var(--color-accent-9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.registrationInfo { flex: 1; }
+
+.emptyRegistrations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-6);
+}
+
+@media (max-width: 768px) {
+  .container { padding: var(--space-4); }
+  .formRow { grid-template-columns: 1fr; }
+  .cardActions { flex-direction: column; }
+  .actionBtn, .deleteBtn { width: 100%; }
+}

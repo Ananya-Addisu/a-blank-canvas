@@ -1,0 +1,189 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--color-neutral-1);
+}
+
+.mainWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.container {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-6);
+  max-width: 800px;
+}
+
+.header {
+  margin-bottom: var(--space-6);
+}
+
+.headerIcon {
+  color: var(--color-accent-9);
+  margin-bottom: var(--space-2);
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-neutral-12);
+  margin-bottom: var(--space-1);
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: var(--color-neutral-10);
+}
+
+.sortBar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-5);
+}
+
+.sortLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-neutral-10);
+}
+
+.sortOptions {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.sortButton {
+  border: 1px solid var(--color-neutral-5);
+  background: var(--color-neutral-1);
+  color: var(--color-neutral-11);
+  border-radius: var(--radius-2);
+  padding: 0.45rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sortButtonActive {
+  border-color: var(--color-accent-7);
+  background: var(--color-accent-3);
+  color: var(--color-accent-11);
+}
+
+.empty {
+  text-align: center;
+  padding: var(--space-10);
+  color: var(--color-neutral-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.card {
+  background: var(--color-neutral-2);
+  border: 1px solid var(--color-neutral-4);
+  border-radius: var(--radius-3);
+}
+
+.cardContent {
+  padding: var(--space-5);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-2);
+}
+
+.compTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-neutral-12);
+}
+
+.courseName {
+  font-size: 0.85rem;
+  color: var(--color-accent-9);
+  margin-bottom: var(--space-4);
+}
+
+.stats {
+  display: flex;
+  gap: var(--space-5);
+  margin-bottom: var(--space-4);
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.85rem;
+  color: var(--color-neutral-10);
+}
+
+.rankings {
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-neutral-4);
+}
+
+.rankTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-neutral-11);
+  margin-bottom: var(--space-3);
+}
+
+.rankRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  font-size: 0.875rem;
+}
+
+.rankNum {
+  font-weight: 700;
+  color: var(--color-accent-9);
+  width: 30px;
+}
+
+.rankInfo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rankName {
+  color: var(--color-neutral-12);
+}
+
+.rankMeta {
+  font-size: 0.75rem;
+  color: var(--color-neutral-9);
+}
+
+.rankScore {
+  font-weight: 600;
+  color: var(--color-neutral-11);
+}
+
+@media (max-width: 768px) {
+  .container { padding: var(--space-4); }
+  .stats { flex-wrap: wrap; gap: var(--space-3); }
+}

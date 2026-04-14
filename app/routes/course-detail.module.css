@@ -1,0 +1,373 @@
+.container {
+  min-height: 100vh;
+  background-color: var(--color-neutral-1);
+  padding-bottom: 70px;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-neutral-1);
+  border-bottom: 1px solid var(--color-neutral-4);
+  backdrop-filter: blur(10px);
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  overflow: hidden;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-round);
+  background-color: var(--color-neutral-2);
+  border: 1px solid var(--color-neutral-4);
+  color: var(--color-neutral-11);
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.backButton:hover {
+  background-color: var(--color-neutral-3);
+  color: var(--color-neutral-12);
+}
+
+.headerTitle {
+  font-size: var(--font-size-3);
+  font-weight: 700;
+  color: var(--color-neutral-12);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.notificationButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-round);
+  color: var(--color-neutral-11);
+  transition: all 0.2s;
+}
+
+.notificationButton:hover {
+  background-color: var(--color-neutral-3);
+  color: var(--color-neutral-12);
+}
+
+.notificationBadge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  height: 18px;
+  min-width: 18px;
+  padding: 0 5px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--space-8);
+  margin-bottom: var(--space-10);
+  background-color: var(--color-neutral-2);
+  border-radius: var(--radius-4);
+  overflow: hidden;
+  border: 1px solid var(--color-neutral-4);
+  padding: var(--space-6);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}
+
+.heroIconWrapper {
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: var(--color-accent-3);
+  border-radius: var(--radius-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent-9);
+  box-shadow: var(--inner-shadow-2);
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.category {
+  font-size: var(--font-size-1);
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-accent-9);
+  margin-bottom: var(--space-2);
+}
+
+.title {
+  font-size: var(--font-size-6);
+  font-weight: 800;
+  margin-bottom: var(--space-4);
+  color: var(--color-neutral-12);
+  line-height: 1.2;
+}
+
+.instructor {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+  color: var(--color-neutral-11);
+  font-weight: 500;
+}
+
+.instructorIcon {
+  color: var(--color-neutral-8);
+}
+
+.description {
+  font-size: var(--font-size-2);
+  color: var(--color-neutral-11);
+  line-height: 1.6;
+  margin-bottom: var(--space-6);
+}
+
+.meta {
+  display: flex;
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-neutral-10);
+  font-size: var(--font-size-2);
+}
+
+.metaIcon {
+  color: var(--color-neutral-7);
+}
+
+.enrollButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-accent-9);
+  color: white;
+  padding: var(--space-4);
+  border-radius: var(--radius-3);
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  box-shadow: var(--shadow-2);
+}
+
+.enrollButton:hover {
+  background-color: var(--color-accent-10);
+}
+
+.progress {
+  margin-top: auto;
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+}
+
+.progressLabel {
+  font-size: var(--font-size-1);
+  font-weight: 600;
+  color: var(--color-neutral-11);
+}
+
+.progressValue {
+  font-size: var(--font-size-1);
+  font-weight: 700;
+  color: var(--color-accent-9);
+}
+
+.progressBar {
+  height: 8px;
+  background-color: var(--color-neutral-4);
+  border-radius: var(--radius-round);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: var(--color-accent-9);
+  border-radius: var(--radius-round);
+  transition: width 0.3s ease;
+}
+
+.chaptersHeader {
+  margin-bottom: var(--space-6);
+  border-bottom: 2px solid var(--color-neutral-4);
+  padding-bottom: var(--space-2);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-4);
+  font-weight: 700;
+}
+
+.chapter {
+  margin-bottom: var(--space-8);
+}
+
+.chapterHeader {
+  margin-bottom: var(--space-4);
+}
+
+.chapterTitle {
+  font-size: var(--font-size-3);
+  font-weight: 700;
+  color: var(--color-neutral-12);
+}
+
+.chapterDescription {
+  font-size: var(--font-size-1);
+  color: var(--color-neutral-10);
+  margin-top: var(--space-1);
+}
+
+.lessons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.lesson {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4);
+  background-color: var(--color-neutral-1);
+  border: 1px solid var(--color-neutral-4);
+  border-radius: var(--radius-3);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.lesson:hover:not(.locked) {
+  border-color: var(--color-accent-7);
+  background-color: var(--color-accent-2);
+  transform: translateX(4px);
+}
+
+.lesson.locked {
+  cursor: not-allowed;
+  opacity: 0.7;
+  background-color: var(--color-neutral-2);
+}
+
+.lessonLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex: 1;
+}
+
+.lessonIcon {
+  color: var(--color-neutral-8);
+  flex-shrink: 0;
+}
+
+.lessonCompleted {
+  color: var(--color-success-9);
+}
+
+.lessonLocked {
+  color: var(--color-neutral-6);
+}
+
+.lessonContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.lessonTitle {
+  font-size: var(--font-size-2);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.previewBadge {
+  font-size: 10px;
+  padding: 0 6px;
+}
+
+.lessonMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--font-size-1);
+  color: var(--color-neutral-9);
+  margin-top: var(--space-1);
+}
+
+.lessonType {
+  text-transform: capitalize;
+}
+
+.lessonRight {
+  display: flex;
+  align-items: center;
+}
+
+.playAction {
+  color: var(--color-accent-9);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.lesson:hover .playAction {
+  opacity: 1;
+}
+
+.lockIcon {
+  color: var(--color-neutral-6);
+}

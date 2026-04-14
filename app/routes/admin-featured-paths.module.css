@@ -1,0 +1,219 @@
+.page {
+  width: 100%;
+}
+
+.main {
+  flex: 1;
+  padding: var(--space-6);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-6);
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.title {
+  font-size: var(--font-size-5);
+  font-weight: 700;
+  color: var(--color-neutral-12);
+}
+
+.subtitle {
+  font-size: var(--font-size-2);
+  color: var(--color-neutral-10);
+  margin-top: var(--space-1);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+/* Featured path card */
+.card {
+  display: grid;
+  grid-template-columns: auto 120px 1fr auto;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  border-radius: var(--radius-3);
+  border: var(--border-size-1) solid var(--color-neutral-6);
+  background: var(--color-neutral-2);
+  transition: box-shadow 0.15s;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-2);
+}
+
+.dragHandle {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  cursor: grab;
+  padding: var(--space-2);
+  color: var(--color-neutral-9);
+}
+
+.dragHandle:active {
+  cursor: grabbing;
+}
+
+.thumbnail {
+  width: 120px;
+  height: 80px;
+  border-radius: var(--radius-2);
+  overflow: hidden;
+  background: var(--color-neutral-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnailPlaceholder {
+  color: var(--color-neutral-8);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.name {
+  font-weight: 600;
+  font-size: var(--font-size-3);
+  color: var(--color-neutral-12);
+}
+
+.meta {
+  font-size: var(--font-size-1);
+  color: var(--color-neutral-10);
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.badges {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+/* Available bundles section */
+.availableSection {
+  margin-top: var(--space-8);
+}
+
+.availableTitle {
+  font-size: var(--font-size-4);
+  font-weight: 600;
+  color: var(--color-neutral-12);
+  margin-bottom: var(--space-4);
+}
+
+.availableGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-3);
+}
+
+.availableCard {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border-radius: var(--radius-2);
+  border: var(--border-size-1) solid var(--color-neutral-5);
+  background: var(--color-neutral-2);
+}
+
+.availableCardInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.availableCardName {
+  font-weight: 500;
+  font-size: var(--font-size-2);
+  color: var(--color-neutral-12);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.availableCardMeta {
+  font-size: var(--font-size-1);
+  color: var(--color-neutral-9);
+}
+
+/* Edit dialog */
+.editGrid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.thumbnailPreview {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius-2);
+  margin-bottom: var(--space-2);
+}
+
+.orderBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-accent-9);
+  color: var(--color-accent-contrast);
+  font-weight: 700;
+  font-size: var(--font-size-2);
+}
+
+.emptyState {
+  text-align: center;
+  padding: var(--space-8);
+  color: var(--color-neutral-9);
+}
+
+.emptyIcon {
+  margin-bottom: var(--space-3);
+  color: var(--color-neutral-7);
+}
+
+@media (max-width: 768px) {
+  .card {
+    grid-template-columns: auto 80px 1fr;
+    gap: var(--space-3);
+  }
+  .actions {
+    grid-column: 1 / -1;
+    justify-content: flex-end;
+  }
+  .thumbnail {
+    width: 80px;
+    height: 56px;
+  }
+}

@@ -1,0 +1,159 @@
+.container {
+  padding: var(--space-6);
+  max-width: 900px;
+}
+
+.header {
+  margin-bottom: var(--space-6);
+}
+
+.headerTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+}
+
+.headerIcon {
+  width: 56px;
+  height: 56px;
+  background: var(--color-accent-3);
+  color: var(--color-accent-9);
+  border-radius: var(--radius-round);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-4);
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-neutral-12);
+  margin-bottom: var(--space-2);
+}
+
+.subtitle {
+  font-size: 15px;
+  color: var(--color-neutral-10);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.card {
+  background: var(--color-neutral-1);
+  border: 1px solid var(--color-neutral-4);
+  border-radius: var(--radius-3);
+  padding: var(--space-5);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.cardImage {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: var(--radius-2);
+  flex-shrink: 0;
+}
+
+.cardInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.cardTitle {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--color-neutral-12);
+  margin-bottom: 4px;
+}
+
+.cardMeta {
+  font-size: 13px;
+  color: var(--color-neutral-10);
+  margin-bottom: 4px;
+}
+
+.cardBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badgeActive {
+  background: hsl(142 71% 45% / 0.15);
+  color: hsl(142 71% 35%);
+}
+
+.badgeInactive {
+  background: hsl(0 0% 50% / 0.1);
+  color: hsl(0 0% 45%);
+}
+
+.badgeExpired {
+  background: hsl(0 72% 51% / 0.1);
+  color: hsl(0 72% 41%);
+}
+
+.cardActions {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.formGrid {
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-6) var(--space-6);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.formLabel {
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--color-neutral-11);
+}
+
+.emptyState {
+  text-align: center;
+  padding: var(--space-10);
+  color: var(--color-neutral-9);
+}
+
+.emptyState svg {
+  margin: 0 auto var(--space-3);
+  opacity: 0.4;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}

@@ -1,0 +1,227 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #000;
+  border-radius: var(--radius-4);
+  overflow: hidden;
+}
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  background: #000;
+}
+
+.pointerBlocker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  cursor: default;
+}
+
+.iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.controlsContainer {
+  background: rgba(15, 15, 15, 0.95);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 10;
+}
+
+.progressBar {
+  position: relative;
+  height: 4px;
+  width: 100%;
+  cursor: pointer;
+  transition: height 0.1s ease;
+}
+
+.progressBar:hover {
+  height: 6px;
+}
+
+.progressTrack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.progressFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #f00;
+  transition: width 0.1s linear;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.progressThumb {
+  width: 12px;
+  height: 12px;
+  background: #f00;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 0.1s ease;
+  flex-shrink: 0;
+  margin-right: -6px;
+}
+
+.progressBar:hover .progressThumb {
+  transform: scale(1);
+}
+
+.controlsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 12px 10px;
+  gap: var(--space-2);
+}
+
+.leftGroup, .centerGroup, .rightGroup {
+  display: flex;
+  align-items: center;
+}
+
+.leftGroup {
+  gap: var(--space-1);
+}
+
+.centerGroup {
+  gap: var(--space-2);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.playPauseBtn, .volumeBtn, .navBtn, .skipBtn {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: var(--radius-2);
+  transition: background-color 0.2s, opacity 0.2s;
+}
+
+.playPauseBtn:hover, .volumeBtn:hover, .navBtn:hover, .skipBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.navBtn, .skipBtn {
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.navBtn:disabled, .skipBtn:disabled, .playPauseBtn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.timePill {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  color: white;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  margin-left: 8px;
+}
+
+.separator {
+  opacity: 0.5;
+}
+
+.volumeControl {
+  display: flex;
+  align-items: center;
+}
+
+.volumeSlider {
+  width: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-round);
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: width 0.2s ease, opacity 0.2s ease, margin 0.2s ease;
+  opacity: 0;
+}
+
+.volumeControl:hover .volumeSlider {
+  width: 60px;
+  opacity: 1;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.volumeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.videoTitle {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: white;
+  opacity: 0.6;
+  max-width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 768px) {
+  .centerGroup {
+    position: static;
+    transform: none;
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .videoTitle {
+    display: none;
+  }
+  
+  .volumeSlider {
+    display: none;
+  }
+  
+  .navBtn span, .skipBtn span {
+    display: none;
+  }
+}

@@ -1,0 +1,153 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  background: var(--color-neutral-1);
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  padding: var(--space-6);
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-6);
+  gap: var(--space-4);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-neutral-12);
+}
+
+.searchForm {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: white;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-3);
+  border: 1px solid var(--color-neutral-6);
+  flex: 1;
+  max-width: 400px;
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 1rem;
+}
+
+.statsBar {
+  display: flex;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: white;
+  padding: var(--space-4);
+  border-radius: var(--radius-3);
+  border: 1px solid var(--color-neutral-5);
+}
+
+.statValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-accent-11);
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: var(--color-neutral-10);
+}
+
+.studentList {
+  background: white;
+  border-radius: var(--radius-4);
+  border: 1px solid var(--color-neutral-5);
+  overflow: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead {
+  background: var(--color-neutral-2);
+}
+
+.table th {
+  padding: var(--space-4);
+  text-align: left;
+  font-weight: 600;
+  color: var(--color-neutral-12);
+  border-bottom: 2px solid var(--color-neutral-5);
+}
+
+.table td {
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--color-neutral-4);
+  color: var(--color-neutral-11);
+}
+
+.table tbody tr:hover {
+  background: var(--color-neutral-2);
+}
+
+.studentName {
+  font-weight: 600;
+  color: var(--color-neutral-12);
+}
+
+.courseName {
+  color: var(--color-accent-11);
+}
+
+.date {
+  font-size: 0.875rem;
+  color: var(--color-neutral-9);
+}
+
+.emptyState {
+  text-align: center;
+  padding: var(--space-9);
+  color: var(--color-neutral-9);
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .searchForm {
+    max-width: none;
+  }
+  
+  .table {
+    font-size: 0.875rem;
+  }
+  
+  .table th,
+  .table td {
+    padding: var(--space-2);
+  }
+}

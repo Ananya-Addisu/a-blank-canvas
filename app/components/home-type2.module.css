@@ -1,0 +1,407 @@
+.scrollSection {
+  margin-bottom: var(--space-6);
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-3);
+  padding: 0 var(--space-1);
+}
+
+.sectionTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-neutral-12);
+  margin: 0;
+}
+
+.seeAll {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--color-neutral-10);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.seeAll:hover {
+  color: var(--color-accent-9);
+}
+
+/* Horizontal scroll container — show 3.5 cards */
+.scrollRow {
+  display: flex;
+  gap: var(--space-3);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: var(--space-2);
+  scrollbar-width: none;
+}
+
+.scrollRow::-webkit-scrollbar {
+  display: none;
+}
+
+/* ============================
+   Featured Path Card
+   ============================ */
+.featuredCard {
+  position: relative;
+  flex: 0 0 calc((100% - 2 * var(--space-3)) / 2.5);
+  min-width: 0;
+  scroll-snap-align: start;
+  background: var(--color-neutral-1);
+  border: 1px solid var(--color-neutral-5);
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.featuredCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-3);
+}
+
+.featuredCardImageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: visible;
+}
+
+.featuredCardImageWrap::after {
+  content: '';
+  position: absolute;
+  bottom: -55px;
+  left: 0;
+  right: 0;
+  height: 150%;
+  background: linear-gradient(to top, var(--color-neutral-1) 20%, color-mix(in srgb, var(--color-neutral-1) 70%, transparent) 45%, color-mix(in srgb, var(--color-neutral-1) 30%, transparent) 65%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.featuredCardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featuredCardImagePlaceholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--color-accent-3) 0%, var(--color-accent-5) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent-9);
+}
+
+.featuredCardBody {
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  flex: 1;
+  position: relative;
+  z-index: 2;
+  margin-top: -20px;
+}
+
+.featuredCardTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-neutral-12);
+  margin: 0;
+  line-height: 1.3;
+  text-align: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.featuredCardPrice {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-neutral-12);
+  margin: 0;
+  text-align: center;
+}
+
+.featuredCardButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 14px;
+  background: transparent;
+  color: var(--color-neutral-11);
+  border: 1.5px solid var(--color-neutral-7);
+  border-radius: 18px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: var(--space-1);
+  width: fit-content;
+}
+
+.featuredCardButton:hover {
+  background: var(--color-neutral-12);
+  color: var(--color-neutral-1);
+  border-color: var(--color-neutral-12);
+}
+
+/* ============================
+   Course Card — show 3.5
+   ============================ */
+.courseCard {
+  position: relative;
+  flex: 0 0 calc((100% - 2 * var(--space-3)) / 2.5);
+  min-width: 0;
+  scroll-snap-align: start;
+  background: var(--color-neutral-1);
+  border: 1px solid var(--color-neutral-5);
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.courseCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-3);
+}
+
+.courseCardImage {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.courseCardImagePlaceholder {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(135deg, var(--color-accent-3) 0%, var(--color-accent-5) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent-9);
+}
+
+.courseCardBody {
+  padding: 8px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.courseCardTitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-neutral-12);
+  margin: 0;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.courseCardPrice {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-neutral-11);
+  margin: 0;
+}
+
+/* ============================
+   Bundle Card — show 3.5
+   ============================ */
+.bundleCard {
+  position: relative;
+  flex: 0 0 calc((100% - 3 * var(--space-3)) / 3.5);
+  min-width: 0;
+  scroll-snap-align: start;
+  background: var(--color-neutral-1);
+  border: 1px solid var(--color-neutral-5);
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  gap: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  min-height: 110px;
+}
+
+.bundleCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-3);
+}
+
+.bundleCardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.bundleCardTitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-neutral-12);
+  margin: 0;
+  line-height: 1.3;
+  flex: 1;
+  min-width: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bundleDiscountBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  background: var(--color-accent-9);
+  color: var(--color-accent-contrast);
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.bundleCardFooter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.bundlePreviewButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 14px;
+  background: transparent;
+  color: var(--color-neutral-11);
+  border: 1.5px solid var(--color-neutral-7);
+  border-radius: 14px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.bundlePreviewButton:hover {
+  background: var(--color-neutral-12);
+  color: var(--color-neutral-1);
+  border-color: var(--color-neutral-12);
+}
+
+.bundleCourseCount {
+  font-size: 11px;
+  color: var(--color-neutral-10);
+}
+
+@media (max-width: 640px) {
+  .sectionTitle {
+    font-size: 18px;
+  }
+
+  .scrollRow {
+    gap: var(--space-2);
+  }
+
+  .featuredCard {
+    flex: 0 0 calc((100% - 2 * var(--space-2)) / 2.5);
+  }
+
+  .courseCard {
+    flex: 0 0 calc((100% - 2 * var(--space-2)) / 2.5);
+  }
+
+  .bundleCard {
+    flex: 0 0 calc((100% - 2 * var(--space-2)) / 2.5);
+    min-height: auto;
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .bundleCardTitle {
+    font-size: 12px;
+    -webkit-line-clamp: 2;
+  }
+
+  .bundleDiscountBadge {
+    font-size: 10px;
+  }
+
+  .bundlePreviewButton {
+    font-size: 10px;
+    padding: 4px 10px;
+  }
+
+  .bundleCourseCount {
+    font-size: 10px;
+  }
+}
+
+/* Lock badge */
+.lockBadge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color-neutral-12) 70%, transparent);
+  color: var(--color-neutral-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  backdrop-filter: blur(4px);
+}
+
+/* Course card button */
+.courseCardButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  background: transparent;
+  color: var(--color-neutral-11);
+  border: 1.5px solid var(--color-neutral-7);
+  border-radius: 14px;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 2px;
+  width: fit-content;
+}
+
+.courseCardButton:hover {
+  background: var(--color-neutral-12);
+  color: var(--color-neutral-1);
+  border-color: var(--color-neutral-12);
+}

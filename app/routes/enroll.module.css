@@ -1,0 +1,173 @@
+.container {
+  min-height: 100vh;
+  background: var(--color-neutral-1);
+  padding-bottom: 80px;
+}
+
+.main {
+  padding: var(--space-6);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: none;
+  border: 1px solid var(--color-neutral-6);
+  border-radius: var(--radius-3);
+  color: var(--color-neutral-11);
+  font-size: 0.9375rem;
+  cursor: pointer;
+  margin-bottom: var(--space-6);
+  transition: all 0.2s;
+}
+
+.backButton:hover {
+  background: var(--color-neutral-3);
+  border-color: var(--color-neutral-7);
+}
+
+.content {
+  background: var(--color-neutral-2);
+  border-radius: var(--radius-5);
+  padding: var(--space-7);
+  border: 1px solid var(--color-neutral-6);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-7);
+}
+
+.icon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-4);
+  background: var(--color-accent-3);
+  color: var(--color-accent-9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-4);
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 var(--space-2) 0;
+  color: var(--color-neutral-12);
+}
+
+.subtitle {
+  font-size: 0.9375rem;
+  color: var(--color-neutral-10);
+  margin: 0;
+}
+
+.enrollmentCard {
+  background: var(--color-neutral-1);
+  border: 1px solid var(--color-neutral-6);
+  border-radius: var(--radius-4);
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+.cardHeader {
+  margin-bottom: var(--space-5);
+}
+
+.cardTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-neutral-12);
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3) 0;
+}
+
+.label {
+  font-size: 0.9375rem;
+  color: var(--color-neutral-10);
+}
+
+.value {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-neutral-12);
+  text-align: right;
+}
+
+.divider {
+  height: 1px;
+  background: var(--color-neutral-6);
+  margin: var(--space-4) 0;
+}
+
+.totalSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4);
+  background: var(--color-accent-2);
+  border-radius: var(--radius-3);
+  margin-top: var(--space-4);
+}
+
+.totalLabel {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-neutral-12);
+}
+
+.totalValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-accent-9);
+}
+
+.form {
+  margin-bottom: var(--space-5);
+}
+
+.submitButton {
+  width: 100%;
+}
+
+.note {
+  font-size: 0.875rem;
+  color: var(--color-neutral-10);
+  text-align: center;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: var(--space-4);
+  }
+
+  .content {
+    padding: var(--space-5);
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .totalValue {
+    font-size: 1.25rem;
+  }
+
+  .value {
+    max-width: 60%;
+    word-break: break-word;
+  }
+}

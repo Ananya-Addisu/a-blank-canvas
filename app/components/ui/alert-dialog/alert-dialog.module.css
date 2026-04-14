@@ -1,0 +1,113 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  background: color-mix(in srgb, var(--color-neutral-1) 80%, transparent);
+  backdrop-filter: blur(2px);
+}
+
+.overlay[data-state="open"] {
+  animation: var(--animation-fade-in);
+}
+
+.overlay[data-state="closed"] {
+  animation: var(--animation-fade-out);
+}
+
+.content {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 100001;
+  display: flex;
+  flex-direction: column;
+  transform: translate(-50%, -50%);
+  border: var(--border-size-1) solid var(--color-neutral-6);
+  background: var(--color-neutral-1);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-4);
+  transition: all 200ms var(--ease);
+  color: var(--color-neutral-11);
+  border-radius: var(--radius-4);
+  width: 90vw;
+  max-width: 500px;
+  max-height: min(85vh, 100dvh - 40px);
+  overflow: hidden;
+}
+
+.content[data-state="open"] {
+  animation: contentShow 200ms var(--ease);
+}
+
+.content[data-state="closed"] {
+  animation: contentHide 200ms var(--ease);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  text-align: left;
+  flex-shrink: 0;
+}
+
+.footer {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: flex-end;
+  margin-top: var(--space-5);
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-neutral-12);
+}
+
+.description {
+  color: var(--color-neutral-11);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.cancel {
+}
+
+.cancelButton {
+  color: var(--color-neutral-11);
+  border: var(--border-size-1) solid var(--color-neutral-6);
+}
+
+.cancelButton:hover {
+  color: var(--color-neutral-12);
+  border: var(--border-size-1) solid var(--color-neutral-7);
+}
+
+@media (max-width: 640px) {
+  .footer {
+    flex-direction: column-reverse;
+  }
+}
+
+@keyframes contentShow {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes contentHide {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.96);
+  }
+}
