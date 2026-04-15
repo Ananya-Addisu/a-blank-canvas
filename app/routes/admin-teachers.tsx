@@ -42,8 +42,18 @@ export async function clientAction({ request }: { request: Request }) {
   const formData = await request.formData();
   const intent = formData.get('intent') as string;
   if (intent === 'add') {
-    const { error } = await supabase.from('teachers').insert({ full_name: formData.get('name'), phone_number: formData.get('phone'), specialization: formData.get('subject'), experience: formData.get('experience'), qualifications: formData.get('qualifications'), pin_hash: formData.get('pin'), is_approved: true });
+    const { error } = await supabase.rpc('signup_teacher', {
+      p_full_name: formData.get('name') as string,
+      p_phone_number: formData.get('phone') as string,
+      p_email: (formData.get('email') as string) || `${Date.now()}@placeholder.com`,
+      p_pin: formData.get('pin') as string,
+      p_specialization: formData.get('subject') as string || null,
+      p_experience: formData.get('experience') as string || null,
+    });
     if (error) return { success: false, error: error.message };
+    // Auto-approve since admin is adding
+    const { data: newTeacher } = await supabase.from('teachers').select('id').eq('phone_number', formData.get('phone') as string).single();
+    if (newTeacher) await supabase.from('teachers').update({ is_approved: true }).eq('id', newTeacher.id);
   } else if (intent === 'edit-teacher') {
     const up: any = { full_name: formData.get('editName'), phone_number: formData.get('editPhone'), specialization: formData.get('editSpecialization'), experience: formData.get('editExperience') };
     const pin = formData.get('editPin') as string;
