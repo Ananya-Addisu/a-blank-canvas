@@ -9,7 +9,6 @@ export default [
   // Student auth - blocked for browser access
   layout("routes/auth-layout.tsx", [
     route("login", "routes/login.tsx"),
-    route("signup", "routes/signup.tsx"),
   ]),
   route("logout", "routes/logout.tsx"),
 
