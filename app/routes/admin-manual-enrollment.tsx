@@ -26,12 +26,12 @@ export async function clientAction({ request }: { request: Request }) {
   const studentId = formData.get('studentId') as string;
   if (intent === 'enroll-course') {
     const courseId = formData.get('courseId') as string;
-    const { error } = await supabase.from('enrollments').insert({ student_id: studentId, course_id: courseId, enrollment_type: 'course', status: 'approved' });
+    const { error } = await supabase.from('enrollments').insert({ student_id: studentId, course_id: courseId, enrollment_type: 'course', status: 'approved', payment_amount: 0 });
     if (error) return { error: error.message };
     return { success: true, message: 'Course access granted!' };
   } else if (intent === 'enroll-bundle') {
     const bundleId = formData.get('bundleId') as string;
-    const { error } = await supabase.from('enrollments').insert({ student_id: studentId, bundle_id: bundleId, enrollment_type: 'bundle', status: 'approved' });
+    const { error } = await supabase.from('enrollments').insert({ student_id: studentId, bundle_id: bundleId, enrollment_type: 'bundle', status: 'approved', payment_amount: 0 });
     if (error) return { error: error.message };
     return { success: true, message: 'Bundle access granted!' };
   }
