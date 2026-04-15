@@ -1,11 +1,31 @@
 import { Outlet, useRouteError } from "react-router";
+import { useState, useEffect } from "react";
 import { useOnlineStatus } from "~/hooks/use-online-status";
 import { useForceLogoutGuard } from "~/hooks/use-force-logout-guard";
 import { NoConnectionScreen } from "~/components/no-connection-screen";
 import { OfflineBanner } from "~/components/offline-banner";
+import { AppOnlyScreen } from "~/components/app-only-screen";
 
 export default function StudentLayout() {
   useForceLogoutGuard(5_000);
+
+  const [isNative, setIsNative] = useState(true);
+
+  useEffect(() => {
+    async function check() {
+      try {
+        const { Capacitor } = await import("@capacitor/core");
+        setIsNative(Capacitor.isNativePlatform());
+      } catch {
+        setIsNative(false);
+      }
+    }
+    check();
+  }, []);
+
+  if (!isNative) {
+    return <AppOnlyScreen />;
+  }
 
   return (
     <div style={{ minHeight: "100dvh", paddingTop: "env(safe-area-inset-top, 0px)" }}>
