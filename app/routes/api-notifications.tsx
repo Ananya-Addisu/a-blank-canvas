@@ -1,4 +1,3 @@
-import type { Route } from './+types/api-notifications';
 import { supabase } from '~/lib/supabase.client';
 
 export async function clientAction({ request }: { request: Request }) {
