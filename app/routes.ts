@@ -14,6 +14,7 @@ export default [
 
   // Student Portal - blocked for browser access
   layout("routes/student-layout.tsx", [
+    route("signup", "routes/signup.tsx"),
     route("home-page", "routes/home-page.tsx"),
     route("library", "routes/library.tsx"),
     route("my-courses", "routes/my-courses.tsx"),
