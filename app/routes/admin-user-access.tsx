@@ -1,6 +1,6 @@
 // Fix #15: Admin ban/unban user from courses page
-import { useState } from 'react';
-import { Form, useSearchParams } from 'react-router';
+import { useState, useEffect } from 'react';
+import { useSearchParams, useFetcher, useRevalidator } from 'react-router';
 import type { Route } from './+types/admin-user-access';
 import { Button } from '~/components/ui/button/button';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '~/components/ui/dialog/dialog';
@@ -9,8 +9,6 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '~
 import { ShieldOff, ShieldCheck } from 'lucide-react';
 import styles from './admin-user-access.module.css';
 import { supabaseAdmin as supabase } from '~/lib/supabase.client';
-
-
 
 export async function clientLoader({ request }: { request: Request }) {
   const url = new URL(request.url);
@@ -36,11 +34,15 @@ export async function clientAction({ request }: { request: Request }) {
   const formData = await request.formData();
   const intent = formData.get('intent') as string;
   const enrollmentId = formData.get('enrollmentId') as string;
-  if (intent === 'ban') { await supabase.from('enrollments').update({ status: 'rejected' }).eq('id', enrollmentId); }
-  else if (intent === 'unban') { await supabase.from('enrollments').update({ status: 'approved' }).eq('id', enrollmentId); }
+  if (intent === 'ban') {
+    const { error } = await supabase.from('enrollments').update({ status: 'rejected' }).eq('id', enrollmentId);
+    if (error) return { error: error.message };
+  } else if (intent === 'unban') {
+    const { error } = await supabase.from('enrollments').update({ status: 'approved' }).eq('id', enrollmentId);
+    if (error) return { error: error.message };
+  }
   return { success: true };
 }
-
 
 function getTimeRemaining(expiresAt: string | null): { text: string; level: string } {
   if (!expiresAt) return { text: 'No expiry', level: 'normal' };
@@ -58,6 +60,18 @@ export default function AdminUserAccess({ loaderData }: Route.ComponentProps) {
   const { courses, students, enrollments, view, courseId, studentId } = loaderData as any;
   const [searchParams, setSearchParams] = useSearchParams();
   const [banTarget, setBanTarget] = useState<{ enrollmentId: string; title: string; description: string } | null>(null);
+  const fetcher = useFetcher();
+  const revalidator = useRevalidator();
+
+  // Close dialog and revalidate after successful action
+  useEffect(() => {
+    if (fetcher.state === 'idle' && fetcher.data) {
+      if ((fetcher.data as any).success) {
+        setBanTarget(null);
+        revalidator.revalidate();
+      }
+    }
+  }, [fetcher.state, fetcher.data]);
 
   const switchView = (v: string) => {
     setSearchParams({ view: v });
@@ -72,6 +86,20 @@ export default function AdminUserAccess({ loaderData }: Route.ComponentProps) {
     value: s.id,
     label: `${s.full_name} (${s.phone_number})`,
   }));
+
+  const handleBan = (enrollmentId: string) => {
+    const fd = new FormData();
+    fd.set('intent', 'ban');
+    fd.set('enrollmentId', enrollmentId);
+    fetcher.submit(fd, { method: 'post' });
+  };
+
+  const handleUnban = (enrollmentId: string) => {
+    const fd = new FormData();
+    fd.set('intent', 'unban');
+    fd.set('enrollmentId', enrollmentId);
+    fetcher.submit(fd, { method: 'post' });
+  };
 
   return (
     <div className={styles.container}>
@@ -152,13 +180,16 @@ export default function AdminUserAccess({ loaderData }: Route.ComponentProps) {
                                 <ShieldOff size={14} /> Ban
                               </Button>
                             ) : (
-                              <Form method="post" style={{ display: 'inline' }}>
-                                <input type="hidden" name="enrollmentId" value={e.id} />
-                                <input type="hidden" name="intent" value="unban" />
-                                <Button size="sm" variant="outline" type="submit" className={styles.banButton}>
-                                  <ShieldCheck size={14} /> Restore
-                                </Button>
-                              </Form>
+                              <Button
+                                size="sm"
+                                variant="outline"
+                                type="button"
+                                className={styles.banButton}
+                                disabled={fetcher.state !== 'idle'}
+                                onClick={() => handleUnban(e.id)}
+                              >
+                                <ShieldCheck size={14} /> Restore
+                              </Button>
                             )}
                           </TableCell>
                         </TableRow>
@@ -233,13 +264,16 @@ export default function AdminUserAccess({ loaderData }: Route.ComponentProps) {
                                 <ShieldOff size={14} /> Ban
                               </Button>
                             ) : e.status === 'rejected' ? (
-                              <Form method="post" style={{ display: 'inline' }}>
-                                <input type="hidden" name="enrollmentId" value={e.id} />
-                                <input type="hidden" name="intent" value="unban" />
-                                <Button size="sm" variant="outline" type="submit" className={styles.banButton}>
-                                  <ShieldCheck size={14} /> Restore
-                                </Button>
-                              </Form>
+                              <Button
+                                size="sm"
+                                variant="outline"
+                                type="button"
+                                className={styles.banButton}
+                                disabled={fetcher.state !== 'idle'}
+                                onClick={() => handleUnban(e.id)}
+                              >
+                                <ShieldCheck size={14} /> Restore
+                              </Button>
                             ) : (
                               <span style={{ fontSize: '0.8125rem', color: 'var(--color-neutral-10)' }}>Pending</span>
                             )}
@@ -265,13 +299,14 @@ export default function AdminUserAccess({ loaderData }: Route.ComponentProps) {
             <Button type="button" variant="outline" onClick={() => setBanTarget(null)}>
               Cancel
             </Button>
-            <Form method="post">
-              <input type="hidden" name="intent" value="ban" />
-              <input type="hidden" name="enrollmentId" value={banTarget?.enrollmentId || ''} />
-              <Button type="submit" variant="destructive">
-                Confirm Ban
-              </Button>
-            </Form>
+            <Button
+              type="button"
+              variant="destructive"
+              disabled={fetcher.state !== 'idle'}
+              onClick={() => banTarget && handleBan(banTarget.enrollmentId)}
+            >
+              {fetcher.state !== 'idle' ? 'Processing...' : 'Confirm Ban'}
+            </Button>
           </div>
         </DialogContent>
       </Dialog>
