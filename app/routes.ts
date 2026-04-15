@@ -91,6 +91,9 @@ export default [
     route("featured-paths", "routes/admin-featured-paths.tsx"),
   ]),
 
+  // API routes
+  route("api/notifications", "routes/api-notifications.tsx"),
+
   // Utility pages
   route("no-internet", "routes/no-internet.tsx"),
 
