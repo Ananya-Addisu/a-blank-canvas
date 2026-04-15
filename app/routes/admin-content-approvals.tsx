@@ -27,11 +27,14 @@ export async function clientAction({ request }: { request: Request }) {
   const action = formData.get('action') as string;
   const contentType = formData.get('contentType') as 'lesson' | 'library';
   const contentId = formData.get('contentId') as string;
+  const { getSession } = await import('~/lib/auth.client');
+  const session = getSession();
+  const adminId = session?.userId || 'unknown';
   const { approveContent, rejectContent } = await import('~/services/admin.client');
   if (action === 'approve') {
-    return await approveContent(contentType, contentId, 'admin');
+    return await approveContent(contentType, contentId, adminId);
   } else if (action === 'reject') {
-    return await rejectContent(contentType, contentId, 'admin', formData.get('reason') as string);
+    return await rejectContent(contentType, contentId, adminId, formData.get('reason') as string);
   }
   return { success: false, error: 'Unknown action' };
 }
