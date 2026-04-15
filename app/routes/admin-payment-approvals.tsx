@@ -25,9 +25,12 @@ export async function clientAction({ request }: { request: Request }) {
   const submissionId = formData.get('submission_id') as string;
   const status = formData.get('status') as string;
   const adminNotes = formData.get('admin_notes') as string;
+  const { getSession } = await import('~/lib/auth.client');
+  const session = getSession();
+  const adminId = session?.userId || 'unknown';
   const { approvePayment, rejectPayment } = await import('~/services/admin.client');
-  if (status === 'approved') { return await approvePayment(submissionId, 'admin'); }
-  else if (status === 'rejected') { return await rejectPayment(submissionId, 'admin', adminNotes); }
+  if (status === 'approved') { return await approvePayment(submissionId, adminId); }
+  else if (status === 'rejected') { return await rejectPayment(submissionId, adminId, adminNotes); }
   return { success: false };
 }
 
