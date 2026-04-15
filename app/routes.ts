@@ -9,12 +9,12 @@ export default [
   // Student auth - blocked for browser access
   layout("routes/auth-layout.tsx", [
     route("login", "routes/login.tsx"),
-    route("signup", "routes/signup.tsx"),
   ]),
   route("logout", "routes/logout.tsx"),
 
   // Student Portal - blocked for browser access
   layout("routes/student-layout.tsx", [
+    route("signup", "routes/signup.tsx"),
     route("home-page", "routes/home-page.tsx"),
     route("library", "routes/library.tsx"),
     route("my-courses", "routes/my-courses.tsx"),
